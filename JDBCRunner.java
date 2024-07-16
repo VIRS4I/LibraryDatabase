@@ -71,14 +71,14 @@ public class JDBCRunner {
         Statement statement = connection.createStatement();
         ResultSet rs = statement.executeQuery("SELECT * FROM \"Orders\";");
 
-        while (rs.next()) {  // пока есть данные, продвигаться по ним
+        while (rs.next()) { 
             param6 = rs.getInt(columnName6);
             param5 = rs.getInt(columnName5);
             param4 = rs.getString(columnName4);
             param3 = rs.getString(columnName3);
-            param2 = rs.getInt(columnName2); // значение ячейки, можно получить по имени; по умолчанию возвращается строка
+            param2 = rs.getInt(columnName2); 
             param1 = rs.getString(columnName1);
-            param0 = rs.getInt(columnName0);    // если точно уверены в типе данных ячейки, можно его сразу преобразовать
+            param0 = rs.getInt(columnName0);   
             System.out.println(param0 + " | " + param1 + " | " + param2 + " | " + param3 + " | " + param4 + " | " + param5 + " | " + param6);
         }
     }
@@ -92,8 +92,8 @@ public class JDBCRunner {
         Statement statement = connection.createStatement();
         ResultSet rs = statement.executeQuery("SELECT * FROM product;");
 
-        while (rs.next()) {  // пока есть данные
-            param0 = rs.getInt(columnName0); // значение ячейки, можно также получить по порядковому номеру (начиная с 1)
+        while (rs.next()) { 
+            param0 = rs.getInt(columnName0); 
             param1 = rs.getString(columnName1);
             param2 = rs.getInt(columnName2);
             param3 = rs.getInt(columnName3);
@@ -153,7 +153,7 @@ public class JDBCRunner {
         statement.setString(1, order_status);
         ResultSet rs = statement.executeQuery();
 
-        while (rs.next()) {  // пока есть данные перебираем их и выводим
+        while (rs.next()) { 
             System.out.println(rs.getString(1) + " | " + rs.getString(2) + " | " + rs.getInt(3) + " | " + rs.getString(4)
                     + " | " + rs.getString(5) + " | " + rs.getInt(6) + " | " + rs.getInt(7));
         }
@@ -168,7 +168,7 @@ public class JDBCRunner {
         statement.setInt(1, value1);
         statement.setInt(2, value2);
         ResultSet rs = statement.executeQuery();
-        while (rs.next()) {  // пока есть данные перебираем их и выводим
+        while (rs.next()) { 
             System.out.println(rs.getInt(1) + " | " + rs.getString(2) + " | " + rs.getInt(3) + " | " + rs.getInt(4)
                     + " | " + rs.getInt(5));
         }
